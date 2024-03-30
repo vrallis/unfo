@@ -2,6 +2,7 @@ package com.unfo;
 
 import com.unfo.Deck.Card;
 import com.unfo.Deck.DeckFactory;
+import com.unfo.Logic.Game;
 
 /**
  * Hello world!
@@ -9,9 +10,10 @@ import com.unfo.Deck.DeckFactory;
  */
 public class App {
     public static void main(String[] args) {
-        DeckFactory deckFactory = new DeckFactory();
-        for (Card card : deckFactory.getDeck()) {
-            System.out.println(card);
+        Game game = new Game();
+        for (int i = 1; i < 8; i++) {
+            Card drawnCard = game.drawCard();
+            System.out.println("Drawn card: " + drawnCard);
         }
     }
 
