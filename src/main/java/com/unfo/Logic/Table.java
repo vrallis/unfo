@@ -4,11 +4,11 @@ import com.unfo.Deck.Card;
 import com.unfo.Deck.DeckFactory;
 import java.util.Stack;
 
-public class Game {
+public class Table {
     private Stack<Card> drawPile;
     private Stack<Card> discardPile;
 
-    public Game() {
+    public Table() {
         DeckFactory deckFactory = new DeckFactory();
         this.drawPile = new Stack<>();
         this.discardPile = new Stack<>();

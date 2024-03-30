@@ -2,7 +2,7 @@ package com.unfo;
 
 import com.unfo.Deck.Card;
 import com.unfo.Deck.DeckFactory;
-import com.unfo.Logic.Game;
+import com.unfo.Logic.Table;
 
 /**
  * Hello world!
@@ -10,7 +10,7 @@ import com.unfo.Logic.Game;
  */
 public class App {
     public static void main(String[] args) {
-        Game game = new Game();
+        Table game = new Table();
         for (int i = 1; i < 8; i++) {
             Card drawnCard = game.drawCard();
             System.out.println("Drawn card: " + drawnCard);
