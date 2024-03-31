@@ -1,9 +1,9 @@
 package com.unfo;
 
-import com.unfo.GameRules.ClassicRules;
-import com.unfo.Logic.Game;
-import com.unfo.Logic.Player;
-import com.unfo.Deck.Card;
+import com.unfo.deck.Card;
+import com.unfo.gamerules.ClassicRules;
+import com.unfo.logic.Game;
+import com.unfo.logic.Player;
 
 import java.util.List;
 import java.util.Scanner;

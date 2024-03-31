@@ -1,8 +1,8 @@
 package com.unfo;
 
-import com.unfo.Deck.Card;
-import com.unfo.Deck.DeckFactory;
-import com.unfo.Logic.Table;
+import com.unfo.deck.Card;
+import com.unfo.deck.DeckFactory;
+import com.unfo.logic.Table;
 
 /**
  * Hello world!

@@ -1,10 +1,10 @@
-package com.unfo.Logic;
-
-import com.unfo.Deck.Card;
-import com.unfo.Deck.DeckFactory;
+package com.unfo.logic;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+
+import com.unfo.deck.Card;
+import com.unfo.deck.DeckFactory;
 
 public class Table {
     public Deque<Card> drawPile;

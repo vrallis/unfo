@@ -1,9 +1,10 @@
-package com.unfo.Logic;
+package com.unfo.logic;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.unfo.Deck.Card;
-import com.unfo.GameRules.ClassicRules;
+
+import com.unfo.deck.Card;
+import com.unfo.gamerules.ClassicRules;
 
 public class Game {
     private GameRules currentRules;

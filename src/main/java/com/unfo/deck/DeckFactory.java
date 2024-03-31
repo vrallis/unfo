@@ -1,4 +1,4 @@
-package com.unfo.Deck;
+package com.unfo.deck;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,10 +1,10 @@
-package com.unfo.Logic;
-
-import com.unfo.Deck.Card;
+package com.unfo.logic;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import com.unfo.deck.Card;
 
 public class Player {
     private List<Card> hand;

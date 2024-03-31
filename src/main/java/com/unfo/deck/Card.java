@@ -1,4 +1,4 @@
-package com.unfo.Deck;
+package com.unfo.deck;
 
 public class Card {
     String color;

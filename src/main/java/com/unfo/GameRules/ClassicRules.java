@@ -1,12 +1,13 @@
-package com.unfo.GameRules;
+package com.unfo.gamerules;
 
-import com.unfo.Logic.Game;
-import com.unfo.Logic.Player;
-import com.unfo.Logic.Table;
 import java.util.List;
 
 import com.unfo.GameMaster;
-import com.unfo.Deck.Card;
+import com.unfo.deck.Card;
+import com.unfo.logic.Game;
+import com.unfo.logic.Player;
+import com.unfo.logic.Table;
+import com.unfo.GameMaster;
 
 public class ClassicRules implements Game.GameRules {
     private List<Player> players;
