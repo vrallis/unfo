@@ -10,11 +10,9 @@ import com.unfo.Logic.Table;
  */
 public class App {
     public static void main(String[] args) {
-        Table game = new Table();
-        for (int i = 1; i < 8; i++) {
-            Card drawnCard = game.drawCard();
-            System.out.println("Drawn card: " + drawnCard);
-        }
+
+
+
     }
 
 }

@@ -9,6 +9,18 @@ public class Card {
         this.value = value;
     }
 
+    public String getColor() {
+        return this.color;
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     @Override
     public String toString() {
         return "Card{" +
