@@ -31,10 +31,9 @@ public class GameMaster {
         for (int i = 0; i < numPlayers; i++) {
             game.addPlayer(new Player("Player " + i, i));
         }
-        
 
+        game.getCurrentRules().executeInitialCardAction(game);
         game.StartGame();
-        game.executeInitialCardAction();
         
 
         while (!game.isGameOver()) {
@@ -50,13 +49,15 @@ public class GameMaster {
             System.out.println("Top card: " + game.getTable().getTopCard());
 
             if (!playableCards.isEmpty()) {
+                Card topCard = game.getTable().getTopCard();
                 Card chosenCard = chooseCard(playableCards);
                 currentPlayer.chooseCard(playableCards, playableCards.indexOf(chosenCard));
                 game.getTable().addCard(chosenCard);
                 System.out.println(currentPlayer.getName() + " played " + chosenCard);
                 if (chosenCard.getColor().equals("Wild") || chosenCard.getColor().equals("Wild Draw Four")) {
                     String chosenColor = chooseColor();
-                    chosenCard.setColor(chosenColor);
+                    System.out.println(topCard);
+                    topCard.setColor(chosenColor);
                 }
                 if (currentPlayer.getHandSize() == 0) {
                     System.out.println(currentPlayer.getName() + " has won!");

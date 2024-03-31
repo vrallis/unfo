@@ -9,6 +9,7 @@ import com.unfo.GameMaster;
 import com.unfo.Deck.Card;
 
 public class ClassicRules implements Game.GameRules {
+    private List<Player> players;
     @Override
     public boolean executeRules(Game game) {
         Table table = game.getTable();
@@ -27,7 +28,15 @@ public class ClassicRules implements Game.GameRules {
         }
     }
 
-    @Override
+    public void distributeCards(Game game) {
+        List<Player> players = game.getPlayers();
+        for (Player player : players) {
+            for (int i = 0; i < 7; i++) {
+                player.receiveCard(game.getTable().drawPile.pop());
+            }
+        }
+    }
+
     public void executeInitialCardAction(Game game) {
         Table table = game.getTable();
         Card firstCard = table.drawPile.pop();
@@ -40,17 +49,21 @@ public class ClassicRules implements Game.GameRules {
         table.playedPile.push(firstCard);
     }
 
-    @Override
     public void executeCardAction(Card card, Game game) {
         Table table = game.getTable();
         if (card.getValue().equals("Reverse")) {
+            table.addCard(card);
             game.reverseOrder();
+            game.skipPlayer();
         } else if (card.getValue().equals("Skip")) {
+            table.addCard(card);
             game.skipPlayer();
         } else if (card.getValue().equals("Draw Two")) {
+            table.addCard(card);
             game.drawCards(2);
             game.skipPlayer();
         } else if (card.getValue().equals("Wild Draw Four")) {
+            table.addCard(card);
             game.drawCards(4);
             game.skipPlayer();
         } else if (card.getValue().equals("Wild")) {
@@ -59,7 +72,7 @@ public class ClassicRules implements Game.GameRules {
             card.setColor(chosenColor);
             table.addCard(card);
         } else {
-            // If the card is a Number card, no special action is needed
+            table.addCard(card);
         }
     }
 

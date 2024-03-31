@@ -5,7 +5,6 @@ import com.unfo.Deck.DeckFactory;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
 public class Table {
     public Deque<Card> drawPile;

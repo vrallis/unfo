@@ -3,6 +3,7 @@ package com.unfo.Logic;
 import java.util.ArrayList;
 import java.util.List;
 import com.unfo.Deck.Card;
+import com.unfo.GameRules.ClassicRules;
 
 public class Game {
     private GameRules currentRules;
@@ -13,7 +14,9 @@ public class Game {
 
     public interface GameRules {
         void executeInitialCardAction(Game game);
+
         void executeCardAction(Card card, Game game);
+
         boolean executeRules(Game game);
     }
 
@@ -31,6 +34,7 @@ public class Game {
 
     public void skipPlayer() {
         nextPlayer();
+        nextPlayer();
     }
 
     public void drawCards(int numCards) {
@@ -47,6 +51,10 @@ public class Game {
         return players.get(currentPlayerIndex);
     }
 
+    public List<Player> getPlayers() {
+        return this.players;
+    }
+
     public void nextPlayer() {
         if (reverseOrder) {
             currentPlayerIndex--;
@@ -59,17 +67,14 @@ public class Game {
                 currentPlayerIndex = 0;
             }
         }
-        
+
     }
 
     public void StartGame() {
-        for (Player player : players) {
-            for (int i = 0; i < 7; i++) {
-                Card card = table.drawCard();
-                player.receiveCard(card);
-            }
+        if (currentRules instanceof ClassicRules) {
+            ((ClassicRules) currentRules).distributeCards(this);
+            System.out.println("Game started");
         }
-        System.out.println("Game started");
     }
 
     public Table getTable() {

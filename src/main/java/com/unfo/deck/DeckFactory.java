@@ -41,4 +41,12 @@ public class DeckFactory {
     public List<Card> getDeck() {
         return this.deck;
     }
+
+    public static void main(String[] args) {
+        DeckFactory factory = new DeckFactory();
+        List<Card> deck = factory.getDeck();
+        for (Card card : deck) {
+            System.out.println(card);
+        }
+    }
 }
